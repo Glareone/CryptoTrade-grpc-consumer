@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\crypto.proto" GrpcServices="HistoricalFeed" />
   </ItemGroup>
 
 </Project>
