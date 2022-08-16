@@ -1,47 +1,8 @@
-# CryptoTrade-grpc-consumer
+# GRPC consumer
 
 Client which sends Request and consumes the data from the server.
 
 &#9745; Supports stream of messages.  
 &#9745; Supports Uni-message communication. In order to find this variant you need to move back to previous PR Merges.  
 
-Proto:
-```
-syntax = "proto3";
-
-option csharp_namespace = "GrpcClient";
-
-package crypto;
-
-// The greeting service definition.
-service HistoricalFeed {
-  // Sends a greeting
-  rpc Subscribe (SubscribeRequest) returns (stream HistoricalReply);
-}
-
-// The request contains ExchangeType and currency code
-message SubscribeRequest {
-	ExchangeType exchange = 1;
-	string currency = 2;
-}
-
-enum ExchangeType {
-	BITSTAMP = 0;
-	BTC = 1;
-	COINBASE = 2;
-	COINCHECK = 3;
-	KRAKEN = 4;
-}
-
-// The response message containing the HistoricalReply.
-message HistoricalReply {
-	int64 timestamp = 1;
-	double open = 2;
-	double high = 3;
-	double low = 4;
-	double close = 5;
-	double volume_btc = 6;
-	double volume_cur = 7;
-	double weighted_price = 8;
-}
-```
+Proto you may find here: [GRPC Server Proto](https://github.com/Glareone/GRPC-server/blob/main/grpcServer/grpcServer/Protos/crypto.proto)
